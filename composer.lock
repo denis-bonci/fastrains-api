@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0e8134c9435af893075102710bef62cd",
+    "content-hash": "ed0e21b77e6ccd8884d55a94fbb42069",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -229,6 +229,104 @@
             "time": "2017-12-11T16:52:13+00:00"
         },
         {
+            "name": "broadway/event-store-mongodb",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/broadway/event-store-mongodb.git",
+                "reference": "6edc25f88ed3a3283987ff858b9ddabfa591e1ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/broadway/event-store-mongodb/zipball/6edc25f88ed3a3283987ff858b9ddabfa591e1ec",
+                "reference": "6edc25f88ed3a3283987ff858b9ddabfa591e1ec",
+                "shasum": ""
+            },
+            "require": {
+                "broadway/broadway": "^2.0",
+                "ext-mongodb": "*",
+                "mongodb/mongodb": "^1.0",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "broadway/uuid-generator": "~0.4.0",
+                "phpunit/phpunit": "^6.0",
+                "ramsey/uuid": "^3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Broadway\\EventStore\\MongoDB\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Robin van der Vleuten",
+                    "email": "robin@webstronauts.co"
+                }
+            ],
+            "description": "A MongoDB EventStore implementation for Broadway.",
+            "homepage": "https://github.com/broadway/event-store-mongodb",
+            "time": "2017-12-09T16:41:26+00:00"
+        },
+        {
+            "name": "broadway/read-model-mongodb",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/broadway/read-model-mongodb.git",
+                "reference": "b4d2e26e2dbb6355f5792aff63c1b847e8ed65f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/broadway/read-model-mongodb/zipball/b4d2e26e2dbb6355f5792aff63c1b847e8ed65f9",
+                "reference": "b4d2e26e2dbb6355f5792aff63c1b847e8ed65f9",
+                "shasum": ""
+            },
+            "require": {
+                "beberlei/assert": "^2.7",
+                "broadway/broadway": "^2.0",
+                "mongodb/mongodb": "^1.0",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Broadway\\ReadModel\\MongoDB\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Robin van der Vleuten",
+                    "email": "robin@webstronauts.co"
+                }
+            ],
+            "description": "A MongoDB ReadModel implementation for Broadway.",
+            "homepage": "https://github.com/broadway/read-model-mongodb",
+            "time": "2017-12-10T09:27:05+00:00"
+        },
+        {
             "name": "broadway/uuid-generator",
             "version": "0.4.0",
             "source": {
@@ -264,6 +362,71 @@
             ],
             "description": "UUID generator for broadway/broadway.",
             "time": "2016-12-14T10:47:27+00:00"
+        },
+        {
+            "name": "mongodb/mongodb",
+            "version": "1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mongodb/mongo-php-library.git",
+                "reference": "b9f35916125976533f4b1e67a4a0ee7baf1d3bb9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mongodb/mongo-php-library/zipball/b9f35916125976533f4b1e67a4a0ee7baf1d3bb9",
+                "reference": "b9f35916125976533f4b1e67a4a0ee7baf1d3bb9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-hash": "*",
+                "ext-json": "*",
+                "ext-mongodb": "^1.4.0",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.36 || ^6.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MongoDB\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Jeremy Mikola",
+                    "email": "jmikola@gmail.com"
+                },
+                {
+                    "name": "Derick Rethans",
+                    "email": "github@derickrethans.nl"
+                },
+                {
+                    "name": "Katherine Walker",
+                    "email": "katherine.walker@mongodb.com"
+                }
+            ],
+            "description": "MongoDB driver library",
+            "homepage": "https://jira.mongodb.org/browse/PHPLIB",
+            "keywords": [
+                "database",
+                "driver",
+                "mongodb",
+                "persistence"
+            ],
+            "time": "2018-04-19T17:20:30+00:00"
         },
         {
             "name": "psr/cache",
