@@ -1,4 +1,7 @@
 {
+    "beberlei/assert": {
+        "version": "v2.9.5"
+    },
     "behat/behat": {
         "version": "v3.4.3"
     },
@@ -16,6 +19,21 @@
     },
     "behat/transliterator": {
         "version": "v1.2.0"
+    },
+    "broadway/broadway": {
+        "version": "2.0.1"
+    },
+    "broadway/broadway-bundle": {
+        "version": "0.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "0.4",
+            "ref": "a4ded8381c60e594474584599659eef9d931c872"
+        }
+    },
+    "broadway/uuid-generator": {
+        "version": "0.4.0"
     },
     "container-interop/container-interop": {
         "version": "1.2.0"
