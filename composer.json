@@ -7,6 +7,8 @@
         "broadway/broadway-bundle": "^0.4.1",
         "broadway/event-store-mongodb": "^0.2.0",
         "broadway/read-model-mongodb": "^0.2.0",
+        "ramsey/uuid": "^3.7",
+        "sensio/framework-extra-bundle": "^5.1",
         "symfony/console": "^4.0",
         "symfony/flex": "^1.0",
         "symfony/framework-bundle": "^4.0",
