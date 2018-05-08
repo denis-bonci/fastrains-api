@@ -26,3 +26,27 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    app.station.read_model.repository:
+        class: Broadway\ReadModel\ReadModel
+        factory: ['@broadway.read_model.mongodb.repository_factory', create]
+        arguments: ['', 'App\ReadModel\Station']
+
+    App\Console\LoadStationsCommand:
+        arguments: ['@broadway.command_handling.command_bus']
+
+    app.station.repository:
+        class: App\AppRepository
+        arguments:
+            - '@broadway.event_store'
+            - '@broadway.event_handling.event_bus'
+            - 'App\Station\Station'
+            - ['@broadway.metadata_enriching_event_stream_decorator']
+
+    App\Station\StationCommandHandler:
+        arguments: ['@app.station.repository']
+        tags: ['broadway.command_handler']
+
+    App\ReadModel\StationProjector:
+        arguments: ['@app.station.read_model.repository']
+        tags: ['broadway.domain.event_listener']
