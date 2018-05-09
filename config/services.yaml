@@ -27,6 +27,16 @@ services:
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
 
+    App\Controller\ApiController:
+        arguments:
+            - '@broadway.command_handling.command_bus'
+            - '@broadway.uuid.generator'
+            - '@app.travel.read_model.repository'
+            - '@app.section.read_model.repository'
+            - '@app.station.read_model.repository'
+        tags: ['controller.service_arguments']
+
+
     app.station.read_model.repository:
         class: Broadway\ReadModel\ReadModel
         factory: ['@broadway.read_model.mongodb.repository_factory', create]
@@ -36,6 +46,11 @@ services:
          class: Broadway\ReadModel\ReadModel
          factory: ['@broadway.read_model.mongodb.repository_factory', create]
          arguments: ['', 'App\ReadModel\Section']
+
+    app.travel.read_model.repository:
+         class: Broadway\ReadModel\ReadModel
+         factory: ['@broadway.read_model.mongodb.repository_factory', create]
+         arguments: ['', 'App\ReadModel\Travel']
 
     App\Console\LoadSectionsCommand:
          arguments: ['@broadway.command_handling.command_bus']
@@ -50,6 +65,20 @@ services:
              - '@broadway.event_handling.event_bus'
              - 'App\Section\Section'
              - ['@broadway.metadata_enriching_event_stream_decorator']
+
+    App\Travel\Travel:
+        properties:
+            stationRepository: '@app.station.read_model.repository'
+
+    app.travel.repository:
+         class: App\AppNewRepository
+         arguments:
+             - '@broadway.event_store'
+             - '@broadway.event_handling.event_bus'
+             - 'App\Travel\Travel'
+             - ['@broadway.metadata_enriching_event_stream_decorator']
+             - '@app.station.read_model.repository'
+             - '@app.section.read_model.repository'
 
     app.station.repository:
         class: App\AppRepository
@@ -67,10 +96,18 @@ services:
          arguments: ['@app.section.repository']
          tags: ['broadway.command_handler']
 
+    App\Travel\TravelCommandHandler:
+         arguments: ['@app.travel.repository']
+         tags: ['broadway.command_handler']
+
     App\ReadModel\StationProjector:
         arguments: ['@app.station.read_model.repository']
         tags: ['broadway.domain.event_listener']
 
     App\ReadModel\SectionProjector:
          arguments: ['@app.section.read_model.repository']
+         tags: ['broadway.domain.event_listener']
+
+    App\ReadModel\TravelProjector:
+         arguments: ['@app.travel.read_model.repository']
          tags: ['broadway.domain.event_listener']
