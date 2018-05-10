@@ -78,8 +78,6 @@ class ApiController extends Controller
                 }, $stations
             )
         );
-        $response->headers->set('Access-Control-Allow-Origin', '*');
-
         return $response;
     }
 
@@ -134,8 +132,6 @@ class ApiController extends Controller
         }
 
         $response = new JsonResponse($normalizedTravel);
-        $response->headers->set('Access-Control-Allow-Origin', '*');
-
         return $response;
 
     }
