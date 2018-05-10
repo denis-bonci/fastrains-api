@@ -53,7 +53,10 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ]
+        ],
+        "phpunit": "bin/phpunit",
+        "behat" : "vendor/bin/behat",
+        "tests" : ["@phpunit", "@behat"]
     },
     "conflict": {
         "symfony/symfony": "*"
