@@ -9,8 +9,6 @@
         "broadway/read-model-mongodb": "^0.2.0",
         "mjaschen/phpgeo": "^2.0",
         "nelmio/cors-bundle": "^1.5",
-        "ramsey/uuid": "^3.7",
-        "sensio/framework-extra-bundle": "^5.1",
         "symfony/console": "^4.0",
         "symfony/flex": "^1.0",
         "symfony/framework-bundle": "^4.0",
@@ -65,7 +63,7 @@
     },
     "extra": {
         "symfony": {
-            "allow-contrib": false
+            "allow-contrib": "true"
         }
     }
 }

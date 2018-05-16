@@ -56,30 +56,6 @@
     "container-interop/container-interop": {
         "version": "1.2.0"
     },
-    "doctrine/annotations": {
-        "version": "1.0",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "1.0",
-            "ref": "cb4152ebcadbe620ea2261da1a1c5a9b8cea7672"
-        }
-    },
-    "doctrine/cache": {
-        "version": "v1.7.1"
-    },
-    "doctrine/collections": {
-        "version": "v1.5.0"
-    },
-    "doctrine/common": {
-        "version": "v2.8.1"
-    },
-    "doctrine/inflector": {
-        "version": "v1.3.0"
-    },
-    "doctrine/lexer": {
-        "version": "v1.0.1"
-    },
     "mjaschen/phpgeo": {
         "version": "2.0.2"
     },
@@ -95,9 +71,6 @@
             "ref": "7b6cbc842f8cd3d550815247d12294f6f304a8c4"
         }
     },
-    "paragonie/random_compat": {
-        "version": "v2.0.12"
-    },
     "psr/cache": {
         "version": "1.0.1"
     },
@@ -109,18 +82,6 @@
     },
     "psr/simple-cache": {
         "version": "1.0.1"
-    },
-    "ramsey/uuid": {
-        "version": "3.7.3"
-    },
-    "sensio/framework-extra-bundle": {
-        "version": "4.0",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "4.0",
-            "ref": "aaddfdf43cdecd4cf91f992052d76c2cadc04543"
-        }
     },
     "symfony/cache": {
         "version": "v4.0.9"
@@ -204,6 +165,15 @@
             "branch": "master",
             "version": "4.0",
             "ref": "cda8b550123383d25827705d05a42acf6819fe4e"
+        }
+    },
+    "symfony/translation": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "6bcd6c570c017ea6ae5a7a6a027c929fd3542cd8"
         }
     },
     "symfony/yaml": {
